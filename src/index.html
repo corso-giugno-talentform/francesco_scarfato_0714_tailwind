@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind via CLI</title>
+
+    <link href="output.css" rel="stylesheet">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+    <!-- 
+    npm init e enter fino alla fine
+    npm install tailwindcss @tailwindcss/cli
+
+    infine col comando
+    npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
+
+    verrà generato il file output.css
+
+    Ora man mano che assegniamo delle classi tailwind provvederà ad aggiornare
+    output.css per rispecchiare le modifiche
+     -->
+    <h1>Hello world!</h1>
+
+    <!-- Alpine.js sections -->
+    <!-- hide show block -->
+    <section>
+        <div x-data="{ open: false }">
+            <div x-data="{ label: 'Content:' }">
+                <span x-text="label"></span>
+                <span x-show="open"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- counter -->
+    <section>
+        <div x-data="{ count: 0 }">
+            <button x-on:click="count++">Increment</button>
+            <span x-text="count"></span>
+        </div>
+    </section>
+
+    <!-- drop down -->
+    <section>
+        <div x-data="{ open: false }">
+            <button @click="open = ! open">Toggle</button>
+            <div x-show="open" @click.outside="open = false">Contents...</div>
+        </div>
+    </section>
+
+    <!-- search input -->
+    <section>
+        <div x-data="{
+        search: '',
+ 
+        items: ['foo', 'bar', 'baz'],
+ 
+        get filteredItems() {
+            return this.items.filter(
+                i => i.startsWith(this.search)
+            )
+        }
+    }">
+            <input x-model="search" placeholder="Search...">
+  <button type="button" @click="alert(search.value)">+ Add Row</button>
+
+            <ul>
+                <template x-for="item in filteredItems" :key="item">
+                    <li x-text="item"></li>
+                </template>
+            </ul>
+        </div>
+    </section>
+
+</body>
+
+</html>
