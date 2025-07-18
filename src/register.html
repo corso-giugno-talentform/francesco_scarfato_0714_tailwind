@@ -16,36 +16,39 @@
 </head>
 
 <body class="bg-page">
-    <div>
-        <div class="columns-2">
-            <div>
-                <img src="assets/images/form-v6.jpg" alt="">
+    <div class="flex flex-row min-h-screen justify-center items-center">
+        <div class="bg-amber-100">
+            <div class="columns-2">
+                <div class="w-100">
+                    <img src="assets/images/form-v6.jpg" alt="">
+                </div>
+                <div class="w-100">
+                    <form action="#" method="post">
+                        <div>
+                            <input type="text" name="name" id="name" placeholder="Your Name" required
+                                class="border-b px-4 py-2">
+                        </div>
+                        <div>
+                            <input type="text" name="email" id="email" placeholder="Email Address" required
+                                class="border-b px-4 py-2">
+                        </div>
+                        <div>
+                            <input type="password" name="password" id="password" placeholder="password" required
+                                class="border-b px-4 py-2">
+                        </div>
+                        <div>
+                            <input type="password" name="confirm-password" id="confirm-password" placeholder="password"
+                                required class="border-b px-4 py-2">
+                        </div>
+                </div>
+
+                <div class="flex my-4 justify-center items-center">
+                    <button class="border-amber-500 px-6 py-2 
+                    rounded-md border-0 bg-amber-500 
+                    text-white border-solid">Registrati</button>
+                </div>
+                </form>
             </div>
-            <div>
-                <form action="#" method="post">
-                    <div>
-                        <input type="text" name="name" id="name" placeholder="Your Name" required
-                            class="border-b px-4 py-2">
-                    </div>
-                    <div>
-                        <input type="text" name="email" id="email" placeholder="Email Address" required
-                            class="border-b px-4 py-2">
-                    </div>
-                    <div>
-                        <input type="password" name="password" id="password" placeholder="password" required
-                            class="border-b px-4 py-2">
-                    </div>
-                    <div>
-                        <input type="password" name="confirm-password" id="confirm-password" placeholder="password"
-                            required class="border-b px-4 py-2">
-                    </div>
-            </div>
-            <div class="my-4">
-                <button class="border-amber-500 px-6 py-2 
-                rounded-md border-0 bg-amber-500 
-                text-white                border-solid">Registrati</button>
-            </div>
-            </form>
         </div>
 
     </div>
